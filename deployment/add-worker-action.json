@@ -1,0 +1,20 @@
+{
+    "name": "worker-tikaextract",
+    "description": "[Include description here]",
+    "order": 1100,
+    "settings": {
+        "workerName": "worker-tikaextract",
+        "queueName": "dataprocessing-fs-worker-tikaextract-in"
+    },
+    "typeName": "DocumentWorkerHandler",
+    "actionConditions": [
+        {
+            "name": "If reference exists",
+            "additional": {
+                "type": "exists",
+                "field": "reference",
+                "notes": "If reference exists: Reference Lookup"
+            }
+        }
+    ]
+}
