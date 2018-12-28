@@ -30,7 +30,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <caf.worker-document-framework.version>3.4.0-SNAPSHOT</caf.worker-document-framework.version>
+        <caf.worker-document-framework.version>4.1.0-292</caf.worker-document-framework.version>
     </properties>
 
     <dependencyManagement>
@@ -41,6 +41,16 @@
                 <version>${caf.worker-document-framework.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>1.20</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-parsers</artifactId>
+                <version>1.20</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

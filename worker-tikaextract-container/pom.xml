@@ -40,7 +40,7 @@
         <maven.install.skip>true</maven.install.skip>
         <maven.deploy.skip>false</maven.deploy.skip>
         <docker.maven.version>0.13.6</docker.maven.version>
-        <worker-tikaextract.container.name>anthonymcgreevy/worker-tikaextract:${project.version}</worker-tikaextract.container.name>
+        <worker-tikaextract.container.name>anthonymcgreevy/prereleases:worker-tikaextract-${project.version}</worker-tikaextract.container.name>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <test.data>${project.basedir}/test-data/input</test.data>
         <maven.failsafe.version>2.19</maven.failsafe.version>
