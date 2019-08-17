@@ -61,9 +61,9 @@ public final class WorkerTikaExtractConstants
     public static class EnvironmentBasedConfig
     {
         /**
-         * Json representation of a list of string used to pass the specific mime types the worker should treat as family file types.
+         * Json representation of a list of strings used to pass the specific mime types the worker should treat as non family file types.
          */
-        public static final String FAMILY_TYPES = "FAMILY_TYPES";
+        public static final String NON_FAMILY_TYPES = "NON_FAMILY_TYPES";
     }
 
     public static class Failures
