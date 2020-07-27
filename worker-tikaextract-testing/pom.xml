@@ -6,11 +6,10 @@
 
     <parent>
         <artifactId>worker-tikaextract-aggregator</artifactId>
-        <groupId>com.github.cafdataprocessing</groupId>
+        <groupId>com.github.mcgreevy</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.hpe.caf.worker</groupId>
     <artifactId>worker-tikaextract-testing</artifactId>
 
     <dependencies>
@@ -19,9 +18,8 @@
             <artifactId>worker-document-testing</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.cafdataprocessing</groupId>
+            <groupId>com.github.mcgreevy</groupId>
             <artifactId>worker-tikaextract</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

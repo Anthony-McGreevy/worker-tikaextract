@@ -1,4 +1,4 @@
-package com.github.cafdataprocessing.worker.tikaextract;
+package com.github.mcgreevy.worker.tikaextract;
 
 import com.hpe.caf.worker.document.*;
 import com.hpe.caf.worker.document.config.DocumentWorkerConfiguration;

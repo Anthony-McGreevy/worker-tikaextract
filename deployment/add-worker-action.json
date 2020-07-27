@@ -1,10 +1,10 @@
 {
     "name": "worker-tikaextract",
-    "description": "[Include description here]",
+    "description": "Worker to extract metadata from documents using the opensource library Tika",
     "order": 1100,
     "settings": {
         "workerName": "worker-tikaextract",
-        "queueName": "dataprocessing-fs-worker-tikaextract-in"
+        "queueName": "dataprocessing-worker-tikaextract-in"
     },
     "typeName": "DocumentWorkerHandler",
     "actionConditions": [
@@ -18,3 +18,4 @@
         }
     ]
 }
+

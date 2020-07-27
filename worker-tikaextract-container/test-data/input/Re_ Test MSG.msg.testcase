@@ -1,0 +1,478 @@
+---
+tag: "Re_ Test MSG.msg"
+testCaseInformation:
+  associatedTickets: null
+  comments: "Re_ Test MSG.msg"
+  description: null
+  testCaseId: "Re_ Test MSG.msg"
+inputData:
+  containerId: null
+  inputFile: "Re_ Test MSG.msg"
+  storageReference: null
+  task:
+    customData:
+      outputPartialReference: "TEST_CONTAINER"
+    fields:
+      storageReference:
+      - data: "264c64d5-6fca-4f1a-b576-f9502a175666"
+  useDataStore: true
+expectedOutputData:
+  result:
+    fieldChanges:
+      Author:
+        action: "add"
+        values:
+        - data: "a mcgr"
+      Content-Type:
+        action: "add"
+        values:
+        - data: "application/vnd.ms-outlook"
+      Creation-Date:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      EXTRACTED_CONTENT:
+        action: "add"
+        values:
+        - data: "Re: Test MSG\n\tFrom\n\ta mcgr\n\tTo\n\tA mcgr\n\tRecipients\n\t\
+            text_extractor_test_01@outlook.com\n\nHey,\n\n\n\nThis is some simulated\
+            \ reply content to simulate an email thread that can be extracted.\n\n\
+            \n\nThanks,\n\n\n\nTester\n\n\_ _____ \_\n\n\nFrom: A mcgr <text_extractor_test_01@outlook.com>\n\
+            Sent: 27 July 2020 21:01\nTo: text_extractor_test_02@outlook.com <text_extractor_test_02@outlook.com>\n\
+            Subject: Test MSG \n\n\_\n\nHey,\n\n\n\nThis is some simulated email content\
+            \ to be extracted during metadata extraction through the worker-tikaextract.\n\
+            \n\n\nThanks,\n\n\n\nTest\n\n\n\n\n"
+      Last-Modified:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      Last-Save-Date:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      Message-Bcc:
+        action: "add"
+        values:
+        - data: ""
+      Message-Cc:
+        action: "add"
+        values:
+        - data: ""
+      Message-From:
+        action: "add"
+        values:
+        - data: "a mcgr"
+      Message-Recipient-Address:
+        action: "add"
+        values:
+        - data: "text_extractor_test_01@outlook.com"
+      Message-To:
+        action: "add"
+        values:
+        - data: "A mcgr"
+      Message:From-Email:
+        action: "add"
+        values:
+        - data: "text_extractor_test_02@outlook.com"
+      Message:From-Name:
+        action: "add"
+        values:
+        - data: "a mcgr"
+      Message:Raw-Header:ARC-Authentication-Results:
+        action: "add"
+        values:
+        - data: "i=2; mx.microsoft.com 1; spf=pass (sender ip is\n 40.92.51.67) smtp.rcpttodomain=outlook.com\
+            \ smtp.mailfrom=outlook.com;\n dmarc=pass (p=none sp=quarantine pct=100)\
+            \ action=none\n header.from=outlook.com; dkim=pass (signature was verified)\n\
+            \ header.d=outlook.com; arc=pass (0 oda=0 ltdi=1)"
+      Message:Raw-Header:ARC-Message-Signature:
+        action: "add"
+        values:
+        - data: "i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;\n s=arcselector9901;\n\
+            \ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;\n\
+            \ bh=+Z0tBbE991JzvFkXD6mufpPlkQ88lTF2FleuSF/7Dcw=;\n b=b1TYo+Ew7xZh5yfD/y6u/Z/Nrv5Zm8V8hwQUppVHzvbkU3NsCfPxXphWoc8ncYdF1b/A5NeaXDwOFRBDFXZfvi7XiPCtKbPnaeuOhuX/bh8ZL4//i+pItYKomLJ1CMeFY6kjpr7LfXD5ufCXI1IpqriP2fo6y3KAJSiN418GzudF1BJF9F/1fLstJzTd6V15eaB7SftjaOtWpB0lm0/m8VYR2YniX8KdDScgcTW7JUzzFWt7uAX9oydPjeg0obaDiFnaQPP+BGdTKNrelxwWGjrrvqTc6BNbJ1y6bSVnJumDwsJ9AX5Fbw6RZGfdk/kn4BpuvFd+npWkvXFfPIg27Q=="
+      Message:Raw-Header:ARC-Seal:
+        action: "add"
+        values:
+        - data: "i=2; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=pass;\n\
+            \ b=laMmK4D0pre1RZozJdX+ReDRQkTFc095xzGoTxb954bHMzsujZqAjj3wzbz+ilP8J0dLaDzoEiOq6yZNCc8lFwaQn5i2GQDcTqMYeWTRyshd/jBAQ8v6g+TawIxaIXNYgaTuFNfAZy/anG1hfjbzFbV/UIX89UeVXaMnGCdMUokewb6ZaptvJWtnY3NHwm6zo6U6SIn0clGmn/h2kSumAGW+AbzhrtGT05zovL2Lon6l6//H9WS1uFyR9VzXEGmTroT644qZw36/RQ+S2pR7PMj3gYQhZWVDF5kIol1N5VUIrSDdb+TvopQ8SI1tuhW3Pf+4cCUyQrv0C92t2BP2ZA=="
+      Message:Raw-Header:Accept-Language:
+        action: "add"
+        values:
+        - data: "en-GB, en-US"
+      Message:Raw-Header:Authentication-Results:
+        action: "add"
+        values:
+        - data: "spf=pass (sender IP is 40.92.51.67)\n smtp.mailfrom=outlook.com;\
+            \ outlook.com; dkim=pass (signature was verified)\n header.d=outlook.com;outlook.com;\
+            \ dmarc=pass action=none\n header.from=outlook.com;compauth=pass reason=100"
+      Message:Raw-Header:Content-Language:
+        action: "add"
+        values:
+        - data: "en-GB"
+      Message:Raw-Header:Content-Type:
+        action: "add"
+        values:
+        - data: "multipart/alternative;\n\tboundary=\"_000_LOYP123MB34569123F6C86CD5EE61D1E3FA720LOYP123MB3456GBRP_\""
+      Message:Raw-Header:DKIM-Signature:
+        action: "add"
+        values:
+        - data: "v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;\n s=selector1;\n\
+            \ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;\n\
+            \ bh=+Z0tBbE991JzvFkXD6mufpPlkQ88lTF2FleuSF/7Dcw=;\n b=toFntWw/pkXxvcpFiRSt/q2jpIu9cz0rRU075jPz+m4ltoCF/yM/m2t0P67ObmfaRIXCFrBtBxUfNRmmGf6CXcO/sv59tZ/YIsQYKuTMSCgI3PqF8bkJXb/5TykicmSwPl3tAws4sbzAEvczXSF0PDpWuZ1iCP9BM7mkNl7A/9UpCeRqgr9pe+ioHhndfL8odjRXcEQyEG99ebHm1RSGNPIWRQIqmpswJkNDIB/FR+4QI2yztB9vEJRoP2Oho//KYABIm56C7BATpB/eDmiENBP2tLyBhJ47MmjUGtliDkJK7v7AMhtLwwKZOUpQDJ/kh0d/BatidkoVtx0U3js62w=="
+      Message:Raw-Header:Date:
+        action: "add"
+        values:
+        - data: "Mon, 27 Jul 2020 20:03:02 +0000"
+      Message:Raw-Header:From:
+        action: "add"
+        values:
+        - data: "a mcgr <text_extractor_test_02@outlook.com>"
+      Message:Raw-Header:In-Reply-To:
+        action: "add"
+        values:
+        - data: "\n <CWLP265MB04839E58CAC7A514E7336224F9720@CWLP265MB0483.GBRP265.PROD.OUTLOOK.COM>"
+      Message:Raw-Header:MIME-Version:
+        action: "add"
+        values:
+        - data: "1.0"
+      Message:Raw-Header:Message-ID:
+        action: "add"
+        values:
+        - data: "\n <LOYP123MB34569123F6C86CD5EE61D1E3FA720@LOYP123MB3456.GBRP123.PROD.OUTLOOK.COM>"
+      Message:Raw-Header:Received:
+        action: "add"
+        values:
+        - data: "from DM6NAM12HT153.eop-nam12.prod.protection.outlook.com\n (2603:10a6:401:88::25)\
+            \ by CWLP265MB0483.GBRP265.PROD.OUTLOOK.COM with HTTPS\n via CWLP123CA0157.GBRP123.PROD.OUTLOOK.COM;\
+            \ Mon, 27 Jul 2020 20:03:04 +0000"
+      Message:Raw-Header:Received-SPF:
+        action: "add"
+        values:
+        - data: "Pass (protection.outlook.com: domain of outlook.com designates\n\
+            \ 40.92.51.67 as permitted sender) receiver=protection.outlook.com;\n\
+            \ client-ip=40.92.51.67; helo=EUR06-DB8-obe.outbound.protection.outlook.com;"
+      Message:Raw-Header:References:
+        action: "add"
+        values:
+        - data: "\n <CWLP265MB04839E58CAC7A514E7336224F9720@CWLP265MB0483.GBRP265.PROD.OUTLOOK.COM>"
+      Message:Raw-Header:Return-Path:
+        action: "add"
+        values:
+        - data: "text_extractor_test_02@outlook.com"
+      Message:Raw-Header:Subject:
+        action: "add"
+        values:
+        - data: "Re: Test MSG"
+      Message:Raw-Header:Thread-Index:
+        action: "add"
+        values:
+        - data: "AQHWZFCRIff2rpQYv0ujQRgB5aNQcKkb2Pet"
+      Message:Raw-Header:Thread-Topic:
+        action: "add"
+        values:
+        - data: "Test MSG"
+      Message:Raw-Header:To:
+        action: "add"
+        values:
+        - data: "A mcgr <text_extractor_test_01@outlook.com>"
+      Message:Raw-Header:X-EOPTenantAttributedMessage:
+        action: "add"
+        values:
+        - data: "84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0"
+      Message:Raw-Header:X-Forefront-Antispam-Report:
+        action: "add"
+        values:
+        - data: "\n CIP:40.92.51.67;CTRY:IE;LANG:en;SCL:0;SRV:;IPV:NLI;SFV:NSPM;H:EUR06-DB8-obe.outbound.protection.outlook.com;PTR:mail-db8eur06olkn2067.outbound.protection.outlook.com;CAT:NONE;SFTY:;SFS:;DIR:INB;SFP:;"
+      Message:Raw-Header:X-Forefront-Antispam-Report-Untrusted:
+        action: "add"
+        values:
+        - data: "\n CIP:255.255.255.255;CTRY:;LANG:en;SCL:0;SRV:;IPV:NLI;SFV:NSPM;H:LOYP123MB3456.GBRP123.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFTY:;SFS:;DIR:OUT;SFP:1901;"
+      Message:Raw-Header:X-IncomingHeaderCount:
+        action: "add"
+        values:
+        - data: "45"
+      Message:Raw-Header:X-IncomingTopHeaderMarker:
+        action: "add"
+        values:
+        - data: "\n OriginalChecksum:7D650727949AB872DC97535ECD462972DD71DFD5544E6A1FCA937A895B38AB40;UpperCasedChecksum:791768EC2989527462B9D47FF9FD97EAD58D170126A540BC2A8D90DD14868DF0;SizeAsReceived:5814;Count:45"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-AuthAs:
+        action: "add"
+        values:
+        - data: "Anonymous"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-AuthSource:
+        action: "add"
+        values:
+        - data: "\n DM6NAM12FT047.eop-nam12.prod.protection.outlook.com"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-FromEntityHeader:
+        action: "add"
+        values:
+        - data: "Internet"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-Id:
+        action: "add"
+        values:
+        - data: "84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-Network-Message-Id:
+        action: "add"
+        values:
+        - data: "c4d78dbe-8ef9-4be0-0f00-08d83268123b"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-OriginalArrivalTime:
+        action: "add"
+        values:
+        - data: "27 Jul 2020 20:03:03.5813\n (UTC)"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg:
+        action: "add"
+        values:
+        - data: "00000000-0000-0000-0000-000000000000"
+      Message:Raw-Header:X-MS-Exchange-CrossTenant-rms-persistedconsumerorg:
+        action: "add"
+        values:
+        - data: "00000000-0000-0000-0000-000000000000"
+      Message:Raw-Header:X-MS-Exchange-EOPDirect:
+        action: "add"
+        values:
+        - data: "true"
+      Message:Raw-Header:X-MS-Exchange-Organization-AuthAs:
+        action: "add"
+        values:
+        - data: "Anonymous"
+      Message:Raw-Header:X-MS-Exchange-Organization-AuthSource:
+        action: "add"
+        values:
+        - data: "\n DM6NAM12FT047.eop-nam12.prod.protection.outlook.com"
+      Message:Raw-Header:X-MS-Exchange-Organization-ExpirationInterval:
+        action: "add"
+        values:
+        - data: "1:00:00:00.0000000"
+      Message:Raw-Header:X-MS-Exchange-Organization-ExpirationIntervalReason:
+        action: "add"
+        values:
+        - data: "OriginalSubmit"
+      Message:Raw-Header:X-MS-Exchange-Organization-ExpirationStartTime:
+        action: "add"
+        values:
+        - data: "27 Jul 2020 20:03:03.6773\n (UTC)"
+      Message:Raw-Header:X-MS-Exchange-Organization-ExpirationStartTimeReason:
+        action: "add"
+        values:
+        - data: "OriginalSubmit"
+      Message:Raw-Header:X-MS-Exchange-Organization-MessageDirectionality:
+        action: "add"
+        values:
+        - data: "Incoming"
+      Message:Raw-Header:X-MS-Exchange-Organization-Network-Message-Id:
+        action: "add"
+        values:
+        - data: "\n c4d78dbe-8ef9-4be0-0f00-08d83268123b"
+      Message:Raw-Header:X-MS-Exchange-Organization-PCL:
+        action: "add"
+        values:
+        - data: "2"
+      Message:Raw-Header:X-MS-Exchange-Organization-SCL:
+        action: "add"
+        values:
+        - data: "-1"
+      Message:Raw-Header:X-MS-Exchange-Processed-By-BccFoldering:
+        action: "add"
+        values:
+        - data: "15.20.3216.033"
+      Message:Raw-Header:X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+        action: "add"
+        values:
+        - data: "\n DM6NAM12FT047.eop-nam12.prod.protection.outlook.com"
+      Message:Raw-Header:X-MS-Exchange-Transport-CrossTenantHeadersStamped:
+        action: "add"
+        values:
+        - data: "DB8EUR06HT186"
+      Message:Raw-Header:X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+        action: "add"
+        values:
+        - data: "\n DM6NAM12FT047.eop-nam12.prod.protection.outlook.com"
+      Message:Raw-Header:X-MS-Exchange-Transport-EndToEndLatency:
+        action: "add"
+        values:
+        - data: "00:00:00.8518753"
+      Message:Raw-Header:X-MS-Has-Attach:
+        action: "add"
+        values:
+        - data: ""
+      Message:Raw-Header:X-MS-Office365-Filtering-Correlation-Id:
+        action: "add"
+        values:
+        - data: "c4d78dbe-8ef9-4be0-0f00-08d83268123b"
+      Message:Raw-Header:X-MS-Office365-Filtering-Correlation-Id-Prvs:
+        action: "add"
+        values:
+        - data: "\n 09f72cb0-74d0-4604-f107-08d832681183"
+      Message:Raw-Header:X-MS-TNEF-Correlator:
+        action: "add"
+        values:
+        - data: ""
+      Message:Raw-Header:X-MS-UserLastLogonTime:
+        action: "add"
+        values:
+        - data: "7/27/2020 7:59:56 PM"
+      Message:Raw-Header:X-Message-Delivery:
+        action: "add"
+        values:
+        - data: "Vj0xLjE7dXM9MDtsPTA7YT0xO0Q9MTtHRD0xO1NDTD0tMQ=="
+      Message:Raw-Header:X-Message-Info:
+        action: "add"
+        values:
+        - data: "\n\t5vMbyqxGkddhh69sIkKp9r1lOzPEpd5jfReJiO2rf51nS/G8yUomweUTS09aILXaXbzlB/MG/Zrp8JOuQJWAOMMY59L0EkYu0VdZ+1buSKytaRwJn5JBKw4JNsOOZY6w8xPfoFb/psuw/hd2URx3K24bm0tXmq+qHFZAdTvIu3czU705jTcHosmq5SwSGvrZjeHqdhXhMAHFolr3+HDXmA=="
+      Message:Raw-Header:X-Microsoft-Antispam:
+        action: "add"
+        values:
+        - data: "BCL:0;"
+      Message:Raw-Header:X-Microsoft-Antispam-Mailbox-Delivery:
+        action: "add"
+        values:
+        - data: "\n\tabwl:0;wl:0;pcwl:0;kl:0;iwl:0;dwl:0;dkl:0;rwl:0;ucf:0;jmr:0;ex:0;auth:1;dest:I;OFR:SpamFilterPass;ENG:(5062000282)(90000022)(90005022)(91005020)(90014020)(91030020)(91040020)(9000001)(9010001)(9050020)(9100041)(5061607266)(5061608174)(1005109)(4900115)(8390131)(875032)(98390011)(58390011)(4920090)(6225004)(4950130)(4990090)(9110004);"
+      Message:Raw-Header:X-Microsoft-Antispam-Message-Info:
+        action: "add"
+        values:
+        - data: "\n\tviW5YwuM9sdCpt13/4Xuk6D/WsR+MdTVq0O6n9eKIw732YRYBEAqtUDpIDMLoOxOt8vsXDsMsIO0wkvFe3GEUjaAa6Qx76VG3276Jw6GHCoLqCsvWBBCJa9frRCfUPWmVugJwBTDxfspfGNB5e2ItKx//QKOxKO5kfSDQfL/voA7xt+Q4W6CsC8WvSX9Dg9V6VFRlYFhKGBHvshNB9B0peLhZXrmHyySDaxLzuiDywclKiMG5DsTvAJLZ+mdG/pDn0VMVIhC4iHBKK+Etpn7lWe1FTP0yyro4FKvDPFR8qclndLsYKZWr7HDYDPFzY+QZskBygEmc7yHC8ykuXcTBU2Wu7jTPn8kZciysFPKsJwRUSpQY6x+mWbZmAtUhEBCtRgW1xwNW53sj8PZOVbNy3VdI5XkOH4GEds0cD7pktt84kjjUfkSFQor/avVUqddBNrzpWWRYrv6AY2J+hpMw4m+ZLaoE/b0PKla0jJrjvRPCEBiHtOb7BIg8jS/ZcYYg5AseA7VsFWV1d49WktZl9Kac8gWtEsc7a0BMz8KOMfajcolGkHEboRFxk6+jPMoi8JmkTCB5tHWZMl15k82NyFV4vMwUT3jPfPPZhqEy8lgyFpG/GVoNzsLud+6PDng7/M8YBrSVeGGIqh6m9FKDWd2V0ez+MNEJDkrLqxYteo7zC/02Vi0dww/8k97IGfpsp3SWJC+/lHKExDhetU2Uv7gZt8KN2E6wAprN4GrQQ4dmZ/vJ+td2W6iQtjPtnRn6ZdZwpwafNAP/YHv1WSt2XuODxuT5sS+JhrRRBcfa/jLjoeEOOvS0V/4ZibAjxsjCGGIyuonX39MaZ0HRjYxQQhnhKiPzebF4+gmlfQj15ENPcxXgBkHDSciSAmPDVD71TBvLAlEAQl5Ozak8Zejl0Gip+jMios4FKXJEaCFfY7O9rSrPrlXegZBiNoS6VVOiwO5Azz0++90YJn2qAmuCBBtN97SdSseWb8Slwr0WiSYZrtFrVN0ZixcJuFDsUygSM84pB8L7gIUqSCVYKj4zdzaHmwNSP/Gu7BPX0St2QTiKHtxPWHBM/4lrzZd57k73MqHgdBe+fWYe+8jKEnVSfOqMJYpq7xf3muLVzXs/OWeS2pLuliWvlQcVvwgutShmiZxK7nnCoQuM3j99Z2hCPCH8O/4S00oK71NGGgbs4gCjFwZ+3ecYAni8lQ2Hu/b"
+      Message:Raw-Header:X-Microsoft-Antispam-Message-Info-Original:
+        action: "add"
+        values:
+        - data: "\n RqfBNUg6u3RY4FScA7VGLfyoXHARIeDjtgf6kNCjWBaI7RCyGiCCAns+fcVmk/+45PJPnh2eI2e8kBnByd1rGSenwo/pDqQY5A398hmTUPEOU/Q4mQFdDWUY5DW+FFQDt5NWAbZijfYWdXVQtdZEM4tjt9gP21QRAR2s74GPc4j90YwBNEcNg16cfpaGqtagojzW70M7GP3dUAPc01p3mw=="
+      Message:Raw-Header:X-Microsoft-Antispam-Untrusted:
+        action: "add"
+        values:
+        - data: "BCL:0;"
+      Message:Raw-Header:X-OriginatorOrg:
+        action: "add"
+        values:
+        - data: "outlook.com"
+      Message:Raw-Header:X-SID-PRA:
+        action: "add"
+        values:
+        - data: "TEXT_EXTRACTOR_TEST_02@OUTLOOK.COM"
+      Message:Raw-Header:X-SID-Result:
+        action: "add"
+        values:
+        - data: "PASS"
+      Message:Raw-Header:X-Sender-IP:
+        action: "add"
+        values:
+        - data: "40.92.51.67"
+      Message:Raw-Header:x-eopattributedmessage:
+        action: "add"
+        values:
+        - data: "1"
+      Message:Raw-Header:x-incomingheadercount:
+        action: "add"
+        values:
+        - data: "43"
+      Message:Raw-Header:x-incomingtopheadermarker:
+        action: "add"
+        values:
+        - data: "\n OriginalChecksum:082AB82A25EBAB3B2D4BC04A1993A5D44EE8A6C6BA4BBDBE205A5C73610BF4AE;UpperCasedChecksum:B3DDA895664F9667E2E55D30251153D14D70DFBE6AC1B7C2BE63DFAD530E3B4B;SizeAsReceived:6789;Count:43"
+      Message:Raw-Header:x-ms-exchange-antispam-messagedata:
+        action: "add"
+        values:
+        - data: "\n dLmK9tbbswwJ1MZmdMgzO11L0+cJYi0ua1C+XYrAugmrSH1s+wfgqdPEi81uKDZjE0k6a0/0syuXagtglbivTlRvL2qPrkqy2HPVCAAmqMil8k7pk1Wya2nOIhmSfC2o19D5l1GbMArzyMCb1l+2lQ=="
+      Message:Raw-Header:x-ms-exchange-slblob-mailprops:
+        action: "add"
+        values:
+        - data: "\n 0FgZtA3W0elrE7sW7popqCZMojW4zr5cEETnqfI+2vmQYyv8b3Pa7fCtDidJssKBqxeQVTgt0fNYFOHgNhYtkSWv1fwJRsaZ5RmMbv542MXhkSubVyJY4jP7k2H/HRoV7bH44FLszw4H5ruxw8FzIWEuKtIoLQVptdLDzqmqFmS/oDAli5I+Y2NytMk5bkrI8MszdnMoVFzafLlEVt1vd+p6Hfw+zeEgWoUWiayFrtju920P7PZzvdFy6p1ZClFvcf5o9No8nVRY4czTnTbkWfmzWvfSihdZn32kNoezFVjRAYQATF3b5gqfy0u2RkD/O/Q5P/i3iqBE3bmx4yXQGlezxAxFhPyWGg96BwrBDyF+lVKwCD5GyskncBbbom4ryDuBjXNbv9njVr/NTPOTC+7XpQkDY3uyx3nwF4EJCmIFSteO32mXFC8/9KQaAtOHKxZvRnDmC4lDb3pHa2+IgLaYbxKPv3adC0Ini+Y5is33pRSukMcNFCzeOUaScglhZDUON//90e+XBMZQc6X23/KVsSjGnni0AW9E3qVb+2J2mUJ4Q1HmgfJ2V0RO7Gx3YzPtamFstsY1fm1sgXxutA=="
+      Message:Raw-Header:x-ms-exchange-transport-forked:
+        action: "add"
+        values:
+        - data: "True"
+      Message:Raw-Header:x-ms-publictraffictype:
+        action: "add"
+        values:
+        - data: "Email"
+      Message:Raw-Header:x-ms-traffictypediagnostic:
+        action: "add"
+        values:
+        - data: "DB8EUR06HT186:|DM6NAM12HT153:"
+      Message:Raw-Header:x-tmn:
+        action: "add"
+        values:
+        - data: "[/eLB8ZZFRZ4AOyrkJT7T5Z938tGKkOJm]"
+      Message:To-Display-Name:
+        action: "add"
+        values:
+        - data: "A mcgr"
+      Message:To-Email:
+        action: "add"
+        values:
+        - data: "text_extractor_test_01@outlook.com"
+      Message:To-Name:
+        action: "add"
+        values:
+        - data: ""
+      X-Parsed-By:
+        action: "add"
+        values:
+        - data: "org.apache.tika.parser.DefaultParser"
+      creator:
+        action: "add"
+        values:
+        - data: "a mcgr"
+      date:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      dc:creator:
+        action: "add"
+        values:
+        - data: "a mcgr"
+      dc:description:
+        action: "add"
+        values:
+        - data: "Test MSG"
+      dc:title:
+        action: "add"
+        values:
+        - data: "Re: Test MSG"
+      dcterms:created:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      dcterms:modified:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      meta:author:
+        action: "add"
+        values:
+        - data: "a mcgr"
+      meta:creation-date:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      meta:mapi-from-representing-email:
+        action: "add"
+        values:
+        - data: "text_extractor_test_02@outlook.com"
+      meta:mapi-from-representing-name:
+        action: "add"
+        values:
+        - data: "a mcgr"
+      meta:mapi-message-class:
+        action: "add"
+        values:
+        - data: "NOTE"
+      meta:mapi-sent-by-server-type:
+        action: "add"
+        values:
+        - data: "EX"
+      meta:save-date:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      modified:
+        action: "add"
+        values:
+        - data: "2020-07-27T20:03:02Z"
+      subject:
+        action: "add"
+        values:
+        - data: "Test MSG"
+      title:
+        action: "add"
+        values:
+        - data: "Re: Test MSG"

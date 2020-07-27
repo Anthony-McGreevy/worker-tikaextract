@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-
-    Copyright 2015-2017 EntIT Software LLC, a Micro Focus company.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.cafdataprocessing</groupId>
-    <artifactId>worker-tikaextract-container</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
     <parent>
-        <groupId>com.github.cafdataprocessing</groupId>
+        <groupId>com.github.mcgreevy</groupId>
         <artifactId>worker-tikaextract-aggregator</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    
+    <artifactId>worker-tikaextract-container</artifactId>
+    <packaging>pom</packaging>
 
     <!-- Properties for the worker. -->
     <properties>
@@ -47,7 +28,7 @@
         <maven.compiler.version>3.3</maven.compiler.version>
         <fabric8.docker.maven.version>0.20.1</fabric8.docker.maven.version>
         <skipTests>false</skipTests>
-        <test.case.generation>true</test.case.generation>
+        <test.case.generation>false</test.case.generation>
         <!-- allows users to run a single test case or group of test cases under the main test input directory. e.g. "CAF_1027" -->
         <test.single.testcase.name></test.single.testcase.name>
         <test.case.timeout.ms>60000</test.case.timeout.ms>
@@ -58,7 +39,6 @@
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>jbig2-imageio</artifactId>
-            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.xerial</groupId>
@@ -70,18 +50,21 @@
             <type>pom</type>
         </dependency>
         <dependency>
-            <groupId>com.github.cafdataprocessing</groupId>
+            <groupId>com.github.mcgreevy</groupId>
             <artifactId>worker-tikaextract</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.github.cafdataprocessing</groupId>
             <artifactId>worker-document</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.hpe.caf.worker</groupId>
+            <groupId>com.github.mcgreevy</groupId>
             <artifactId>worker-tikaextract-testing</artifactId>
-            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.workerframework</groupId>
+            <artifactId>worker-testing-util</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -241,7 +224,7 @@
                 <configuration>
                     <watchInterval>500</watchInterval>
                     <logDate>default</logDate>
-                    <autoPull>always</autoPull>
+                    <!--<autoPull>always</autoPull>-->
                     <verbose>true</verbose>
                     <images>
                         <!-- WebDav -->
@@ -302,7 +285,7 @@
                             <name>${worker-tikaextract.container.name}</name>
                             <build>
                                 <maintainer>anthony.mcgreevy@microfocus.com</maintainer>
-                                <from>cafapi/opensuse-jre8:1.2</from>
+                                <from>cafapi/opensuse-jre8:1</from>
                                 <labels>
                                     <caf.worker-document-framework.version>${caf.worker-document-framework.version}</caf.worker-document-framework.version>
                                 </labels>

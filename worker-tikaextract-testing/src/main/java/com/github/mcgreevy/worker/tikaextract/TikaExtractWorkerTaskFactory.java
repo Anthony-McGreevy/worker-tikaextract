@@ -1,6 +1,5 @@
-package com.github.cafdataprocessing.worker.tikaextract;
+package com.github.mcgreevy.worker.tikaextract;
 
-import com.github.mcgreevy.worker.tikaextract.WorkerTikaExtractConstants;
 import com.hpe.caf.util.ref.ReferencedData;
 import com.hpe.caf.worker.document.*;
 import com.hpe.caf.worker.testing.FileInputWorkerTaskFactory;

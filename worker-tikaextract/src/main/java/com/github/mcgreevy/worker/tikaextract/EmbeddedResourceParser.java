@@ -1,56 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.mcgreevy.worker.tikaextract;
 
-import com.github.cafdataprocessing.worker.policy.shared.PolicyWorkerConstants;
-import com.github.cafdataprocessing.workflow.constants.WorkflowWorkerConstants;
 import com.github.mcgreevy.worker.tikaextract.filetype.FileTypeIdentifier;
 import com.google.common.base.Strings;
-import com.hpe.caf.api.Codec;
-import com.hpe.caf.api.CodecException;
-import com.hpe.caf.api.worker.DataStore;
-import com.hpe.caf.api.worker.DataStoreException;
-import com.hpe.caf.api.worker.TaskStatus;
-import com.hpe.caf.api.worker.WorkerException;
-import com.hpe.caf.api.worker.WorkerResponse;
-import com.hpe.caf.api.worker.WorkerTaskData;
+import com.hpe.caf.api.*;
 import com.hpe.caf.codec.JsonCodec;
-import com.hpe.caf.worker.document.DocumentWorkerDocument;
-import com.hpe.caf.worker.document.DocumentWorkerDocumentTask;
-import com.hpe.caf.worker.document.DocumentWorkerFieldValue;
-import com.hpe.caf.worker.document.model.Document;
-import com.hpe.caf.worker.document.model.Field;
-import com.hpe.caf.worker.document.model.Subdocument;
+import com.hpe.caf.api.worker.*;
+import com.hpe.caf.worker.document.*;
+import com.hpe.caf.worker.document.model.*;
 import com.hpe.caf.worker.document.testing.DocumentBuilder;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import org.apache.tika.exception.EncryptedDocumentException;
-import org.apache.tika.exception.TikaException;
+import java.io.*;
+import java.util.*;
+import org.apache.tika.exception.*;
+import org.apache.tika.io.*;
+import org.apache.tika.parser.*;
+import org.apache.tika.sax.*;
 import org.apache.tika.extractor.ParsingEmbeddedDocumentExtractor;
-import org.apache.tika.io.CloseShieldInputStream;
-import org.apache.tika.io.TemporaryResources;
-import org.apache.tika.io.TikaInputStream;
 import org.apache.tika.metadata.Metadata;
-import org.apache.tika.parser.DelegatingParser;
-import org.apache.tika.parser.ParseContext;
-import org.apache.tika.parser.Parser;
-import org.apache.tika.sax.BodyContentHandler;
-import org.apache.tika.sax.EmbeddedContentHandler;
-import static org.apache.tika.sax.XHTMLContentHandler.XHTML;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
+import java.nio.charset.StandardCharsets;
 
-public class EmbeddedResourceParser extends ParsingEmbeddedDocumentExtractor
+import static org.apache.tika.sax.XHTMLContentHandler.XHTML;
+
+public final class EmbeddedResourceParser extends ParsingEmbeddedDocumentExtractor
 {
     private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(WorkerTikaExtract.class);
     private static final Parser DELEGATING_PARSER = new DelegatingParser();
