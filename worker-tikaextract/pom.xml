@@ -34,10 +34,6 @@
             <artifactId>worker-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.github.cafdataprocessing</groupId>
             <artifactId>worker-workflow-constants</artifactId>
         </dependency>

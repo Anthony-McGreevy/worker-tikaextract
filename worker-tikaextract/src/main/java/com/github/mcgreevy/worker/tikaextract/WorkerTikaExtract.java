@@ -1,6 +1,5 @@
 package com.github.mcgreevy.worker.tikaextract;
 
-import com.github.mcgreevy.worker.tikaextract.filetype.FileTypeIdentifier;
 import com.hpe.caf.api.worker.DataStore;
 import com.hpe.caf.api.worker.DataStoreException;
 import com.hpe.caf.api.worker.FilePathProvider;
@@ -32,7 +31,6 @@ import org.xml.sax.SAXException;
 public class WorkerTikaExtract implements DocumentWorker
 {
     private static final Logger LOG = LoggerFactory.getLogger(WorkerTikaExtract.class);
-    private static final FileTypeIdentifier FILE_TYPE_IDENTIFIER = new FileTypeIdentifier();
 
     public WorkerTikaExtract()
     {
@@ -72,7 +70,7 @@ public class WorkerTikaExtract implements DocumentWorker
                 final Metadata metadata = new Metadata();
                 final ParseContext context = new ParseContext();
                 context.set(EmbeddedDocumentExtractor.class, new EmbeddedResourceParser(context, document, datastore,
-                                                                                        outputPartialReference, FILE_TYPE_IDENTIFIER));
+                                                                                        outputPartialReference));
                 parser.parse(inputstream, handler, metadata, context);
 
                 final String content = handler.toString();

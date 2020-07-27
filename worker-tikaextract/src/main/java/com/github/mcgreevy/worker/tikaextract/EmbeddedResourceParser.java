@@ -16,6 +16,7 @@ import org.apache.tika.parser.*;
 import org.apache.tika.sax.*;
 import org.apache.tika.extractor.ParsingEmbeddedDocumentExtractor;
 import org.apache.tika.metadata.Metadata;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
@@ -26,25 +27,23 @@ import static org.apache.tika.sax.XHTMLContentHandler.XHTML;
 
 public final class EmbeddedResourceParser extends ParsingEmbeddedDocumentExtractor
 {
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(WorkerTikaExtract.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EmbeddedResourceParser.class);
     private static final Parser DELEGATING_PARSER = new DelegatingParser();
     private static final Codec JSON_CODEC = new JsonCodec();
     private final Document document;
     private final DataStore datastore;
     private final String outputPartialReference;
     private final ParseContext context;
-    private final FileTypeIdentifier fileTypeIdentifier;
     private int subfileCount = 0;
 
     public EmbeddedResourceParser(final ParseContext context, final Document document, final DataStore datastore,
-                                  final String outputPartialReference, final FileTypeIdentifier fileTypeIdentifier)
+                                  final String outputPartialReference)
     {
         super(context);
         this.context = context;
         this.document = document;
         this.datastore = datastore;
         this.outputPartialReference = outputPartialReference;
-        this.fileTypeIdentifier = fileTypeIdentifier;
     }
 
     @Override
@@ -75,7 +74,7 @@ public final class EmbeddedResourceParser extends ParsingEmbeddedDocumentExtract
                 }
             }
             final String storageRef = datastore.store(stream, outputPartialReference);
-            if (fileTypeIdentifier.isFamilyType(metadata.get("Content-Type"))) {
+            if (FileTypeIdentifier.isFamilyType(metadata.get("Content-Type"))) {
                 final EmbeddedContentHandler subfileHandler = new EmbeddedContentHandler(new BodyContentHandler());
                 final Metadata subfileMetadata = new Metadata();
                 DELEGATING_PARSER.parse(newStream, subfileHandler, subfileMetadata, context);
