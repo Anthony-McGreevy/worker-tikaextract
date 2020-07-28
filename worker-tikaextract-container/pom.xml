@@ -47,7 +47,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.cafapi.logging</groupId>
-            <artifactId>caf-logging-log4j2</artifactId>
+            <artifactId>caf-logging-logback</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
